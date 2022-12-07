@@ -7,19 +7,6 @@ let scissors = "scissors"
 function gameRound () {
 
     let computerSelection = Math.random()
-//    function getComputerChoice(){
-   
-//    if (computerSelection <=0.34){
-//    computerSelection = "rock";
-//    }else if (computerSelection <=0.67){
-//    computerSelection = "paper";
-//    }else{
-//    computerSelection = "scissors";
-//    }
-//    return(computerSelection); 
-//}
-
-//    console.log(computerSelection)
 
     let playerSelection = prompt("Rock, paper or scissors?").toLowerCase();
 
@@ -69,7 +56,7 @@ function game() {
         console.log ("round " + (i+1))
     }
 
-   // console.log(game(gameRound));
+
 }
 
 game()
