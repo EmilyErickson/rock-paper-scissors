@@ -1,55 +1,75 @@
 
-let computerSelection = Math.random()
-function getComputerChoice(){
-   
 
-    if (computerSelection <0.34){
-    computerSelection = "rock";
-    }else if (computerSelection <=0.67){
-    computerSelection = "paper";
-    }else{
-    computerSelection = "scissors";
-    }
-    return(computerSelection); 
-}
 let rock = "rock"
 let paper = "paper"
 let scissors = "scissors"
 
-function gameRound (playerSelection, computerSelection) {
+function gameRound () {
+
+    let computerSelection = Math.random()
+//    function getComputerChoice(){
+   
+//    if (computerSelection <=0.34){
+//    computerSelection = "rock";
+//    }else if (computerSelection <=0.67){
+//    computerSelection = "paper";
+//    }else{
+//    computerSelection = "scissors";
+//    }
+//    return(computerSelection); 
+//}
+
+//    console.log(computerSelection)
+
+    let playerSelection = prompt("Rock, paper or scissors?").toLowerCase();
+
+
     switch (playerSelection) {
         case rock:
-            if (computerSelection = scissors) {
+            if (computerSelection >=0.67) {
                 return ("You Win! Rock beats Scissors")
-            }else if (computerSelection = paper) {
+            }else if (computerSelection >=0.34) {
                 return("You Lose! Paper beats Rock")
-            }else if (computerSelection = rock) {
+            }else if (computerSelection <0.34) {
                 return ("It's a draw!")
             }
             break;
 
         case paper:
-            if (computerSelection = rock) {
-                return ("You Win! Paper beats Paper")
-            }else if (computerSelection = scissors) {
+            if (computerSelection <0.34) {
+                return ("You Win! Paper beats Rock")
+            }else if (computerSelection >=0.67) {
                 return("You Lose! Scissor beats Paper")
-            }else if (computerSelection = paper) {
+            }else if (computerSelection >=0.34) {
                 return ("It's a draw!")
             }
             break;
 
-            case scissors:
-                if (computerSelection = paper) {
-                    return ("You Win! Scissors beats Paper")
-                }else if (computerSelection = rock) {
-                    return("You Lose! Rock beats Scissors")
-                }else if (computerSelection = scissors) {
-                    return ("It's a draw!")
-                }
-                break;
+        case scissors:
+            if (computerSelection >=0.34) {
+                return ("You Win! Scissors beats Paper")
+            }else if (computerSelection <0.34) {
+                return("You Lose! Rock beats Scissors")
+            }else if (computerSelection >=0.67) {
+                return ("It's a draw!")
+            }
+            break;
            
-       
+        default:
+            return("Something went wrong")
             
     }
 }
-console.log(gameRound(rock));
+
+function game() {
+    
+    for (let i = 0; i < 5; i++) {
+
+        console.log(gameRound())
+        console.log ("round " + (i+1))
+    }
+
+   // console.log(game(gameRound));
+}
+
+game()
